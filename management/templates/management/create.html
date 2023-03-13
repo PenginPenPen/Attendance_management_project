@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}生徒の追加{% endblock %}
+{% load static %}
+{% block content %}
+    <form class="create" action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <div class="input">
+            <h3>登録する生徒の詳細情報</h3>
+            <label>
+                生徒の名前
+            </label>
+            <input type="text" name="name">
+            <label>
+                学籍番号
+            </label>
+            <input type="text" name="student_ID_number">
+            <h4>顔を認識できない画像をアップロードしないでください。</h4>
+            <label>
+                顔写真
+            </label>
+            <input type="file" name="image" accept="image/png, image/jpeg" onchange="previewFile(this);">
+            <input class= "button" type="submit" value="作成する">
+            <img id="preview" width="50%">
+            <script>
+                $('input').on('change', function () {
+                    var file = $(this).prop('files')[0];
+                    $('p').text(file.name);
+                });
+                function previewFile(hoge){
+                    var fileData = new FileReader();
+                    fileData.onload = (function() {
+                        //id属性が付与されているimgタグのsrc属性に、fileReaderで取得した値の結果を入力することで
+                        //プレビュー表示している
+                        document.getElementById('preview').src = fileData.result;
+                    });
+                    fileData.readAsDataURL(hoge.files[0]);
+                }
+            </script>
+        </div>
+    </form>
+{% endblock %}

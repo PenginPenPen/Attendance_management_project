@@ -1,0 +1,167 @@
+header{
+    background-color: #333C5E;
+}
+ul{
+    color: #fff;
+    display: flex;
+}
+
+li{
+    padding-left: 10px;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333C5E;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 10vh;
+}
+.title {
+    color: black;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 18%;
+}
+.feature {
+    padding: 10vh;
+    text-align: center;
+    background-color: #F2F2F2;
+}
+.feature h2 {
+    font-size: 1.8em;
+}
+.feature_img {
+    display: flex;
+    margin: auto;
+    padding: 5%;
+}
+.features {
+    display: flex;
+}
+.feature_text {
+    padding: 30px;
+}
+.feature_text h3 {
+    padding-top: 10%;
+    font-size: 1.5em;
+}
+.feature a {
+    text-align: center;
+    padding: 2%;
+    text-decoration: none;
+}
+.feature a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+.news h3{
+    text-align: center;
+    font-size: 1.5em;
+}
+.news ul{
+    color: black;
+    display: flex;
+    margin-left: 30vw;
+}
+.news li {
+    text-align: left;
+}
+.file_up {
+    padding: 10px 30px ;
+    color: #ffffff;
+    background-color: #384878;
+    margin-left: 50px;
+
+}
+.create{
+    background-color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    height: 65vh;
+    width: 25vw;
+    margin-left: 65vw;
+    padding: auto;
+}
+.input{
+    padding-top: 50px;
+}
+form input{
+    margin: auto;
+    background-color: #F2F2F2;
+    border-radius: 0px;
+    display: flex;
+    width: 20vw;
+    height: 4.5vh;
+    font-size: larger;
+    margin-bottom: 20px;
+}
+.button{
+    margin-left: 13vw;
+    border-radius: 30px;
+    font-size: medium;
+    padding-left: 40px;
+    width: 8vw !important;
+}
+form label{
+    margin-left: 50px;
+    font-size: larger;
+}
+.input p{
+    margin-left: 50px;
+}
+.input h3{
+    font-size: larger;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.input h4{
+    font-size: 13px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.Tomoya{
+    margin-left: 15vw;
+    padding: 50px;
+}
+table{
+    font-family: sans-serif;
+}
+table th{
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid black;
+}
+table td{
+    color:#333333;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px 30px 10px 30px;
+    background-color: #ffffff;
+    border-bottom: 1px solid black;
+}
+table tr:nth-child(odd) td {
+	background: #F2F2F2;
+}
+.target {
+    background-color: black;
+    width: 20vw;
+    height: 35vh;
+    margin-bottom: -35vh;
+    float: right;
+    transition: opacity 300ms;
+}
+.target.is-hidden {
+opacity: 0;
+}
+.menu_button{
+    position: absolute;
+    right:0px;
+    margin-top:-15px;
+}
+.bento_menu img{
+    width: 60px;
+}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}トップページ{%endblock title %}
+{% block content %}
+<div class="title">
+  <h1>世界一シンプルな出席管理アプリ</h1>
+  <h2>パンダ</h2>
+</div>
+<div class="feature">
+    <h2>出席管理アプリパンダとは？</h2>
+    <div class="feature_img">
+        <img src="{% static 'image/sample1.jpg' %}" alt=""  width="520px" height="320px" />
+        <div class="feature_text">
+            <h3>全てブラウザの中</h3>
+            <p>生徒の出席、生徒の管理を簡単にwebの中で出来ます。</p>
+            <h3>面倒な事は一切なし</h3>
+            <p>専用アプリをダウンロードする必要も契約する必要もありません。</p>
+        </div>
+    </div>
+    <h2>出席管理に革命を起こそう</h2>
+    <a href="{% url 'accounts:signup' %}"><p>ここから会員登録</p></a>
+</div>
+
+<section class="news">
+    <h3>News</h3>
+    {% for News in object_list %}
+        <ul>
+            <li>{{ News.date }} : {{ News.title }}</li>
+        </ul>
+    {% endfor %}
+</section>
+{% endblock %}
+

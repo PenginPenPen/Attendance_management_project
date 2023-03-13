@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}授業追加ページ{% endblock title %}
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <label>
+        曜日選択
+    </label>
+    <p>
+    <label for="id_day_of_week">Day of week:</label>
+    <select name="day_of_week" required="" id="id_day_of_week">
+    <option value="" selected="">曜日を選択</option>
+
+    <option value="Monday">月曜</option>
+
+    <option value="Tuesday">火曜</option>
+
+    <option value="Wednesday">水曜</option>
+
+    <option value="Thursday">木曜</option>
+
+    <option value="Friday">金曜</option>
+
+    <option value="Saturday">土曜</option>
+
+    <option value="Sunday">日曜</option>
+
+    </select>
+    </p>
+    <label>
+        授業名
+    </label>
+    <input type="text" name="lasson_name">
+    <label>
+        授業開始時間
+    </label>
+    <input type="time" name="start_time">
+    <label>
+        授業終了時間
+    </label>
+    <input type="time" name="end_time">
+    <input class= "button" type="submit" value="作成する">
+</form>
+{% endblock %}

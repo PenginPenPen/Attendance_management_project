@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{student.name}}さんの詳細ページ{% endblock %}
+{% block content %}
+
+名前:{{student.name}}
+学籍番号:{{student.student_ID_number}}
+<img src="{{student.image.url}}" width="100px">
+出席率:100%
+出席履歴
+<table>
+    <tr>
+        <th>日付</th>
+        <th>入場時間</th>
+        <th>出場時間</th>
+        <th>ステータス</th>
+    </tr>
+    {% for log in logs %}
+    <tr>
+        <td>{{log.date}}</td>
+        <td>{{log.in_Time}}</td>
+        <td>{{log.out_time}}</td>
+        <td>{{log.status}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

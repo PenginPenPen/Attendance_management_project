@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}出席履歴{% endblock %}
+{% load static %}
+
+{% block content %}
+{% for Attendance in Attendance_log %}
+    {{Attendance.in_Time}}
+    {{Attendance.out_time}}
+    {{Attendance.status}}
+{% endfor %}
+{% endblock %}

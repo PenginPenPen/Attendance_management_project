@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}管理ページ{% endblock %}
+{% load static %}
+{% block content %}
+<div class="Tomoya">
+    <table align="left">
+        <tr>
+            <th></th>
+            <th>名前</th>
+            <th>学籍番号</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td><a href="{% url 'student' student.pk%}">詳細</a></td>
+            <td>{{student.name}}</td>
+            <td>{{student.student_ID_number}}</td>
+            <!-- <td>{{attendance.in_Time}}</td>
+            <td>{{attendance.out_time}}</td>
+            <td>{{attendance.status}}</td> -->
+        </tr>
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <th>入場時間</th>
+            <th>出場時間</th>
+            <th>ステータス</th>
+        </tr>
+        {% for attendance in attendances %}
+        <tr>
+            <td>{{attendance.in_Time}}</td>
+            <td>{{attendance.out_time}}</td>
+            <td>{{attendance.status}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">出席管理アプリ</a></li>
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'student_list' %}">{{ user.get_username }}</a></li>
+                {% if user.is_superuser %}
+                    <li><a href="http://127.0.0.1:8000/admin/">スーパーーーーゆーーーざーー</a></li>
+                {% endif %}
+                <li class="menu_button"><button class="bento_menu"><img src="{% static 'image/noun-bento-menu-756729.svg' %}" ></button></li>
+            {% else %}
+                <li><a href="{% url 'accounts:login' %}">ログイン</a></li>
+                <li><a href="{% url 'accounts:signup' %}">新規会員登録</a></li>
+            {% endif %}
+            </ul>
+        </nav>
+</header>
+
+<div class="target">
+    <ul>
+        <li><a href="{% url 'create' %}">生徒の追加</a></li>
+        <li><a href="{% url 'accounts:logout' %}">ログアウト</a></li>
+        <li><a href="{% url 'setting' %}">設定</a></li>
+    </ul>
+</div>
+<script>
+    var $target = document.querySelector('.target')
+    // 初期状態で非表示にする
+    $target.classList.add('is-hidden')
+    var $button = document.querySelector('.bento_menu')
+    $button.addEventListener('click', function() {
+    $target.classList.toggle('is-hidden')
+    })
+</script>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+
+<footer>
+    <small>コピーライト</small>
+</footer>
