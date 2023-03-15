@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}生徒削除ページ{% endblock title %}
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <button type="submit">{{ student.name }}さんのデータを削除する</button>
+    </form>
+{% endblock %}

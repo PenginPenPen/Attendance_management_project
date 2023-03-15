@@ -7,6 +7,7 @@ urlpatterns = [
     path('top/',views.index.as_view(),name='index'),
     path('student_list/',views.StudentListView.as_view(),name='student_list'),
     path('create/',views.create.as_view(),name='create'),
+    path('delete/<int:pk>',views.Deleteview.as_view(),name='delete'),
     path('Attendance/',views.Face_recognition.as_view(),name='Attendance'),
     path('video_feed', views.video_feed_view(), name="video_feed"),
     path('student/<int:pk>',views.StudentDetail.as_view(),name='student'),

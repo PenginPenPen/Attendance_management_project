@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, TemplateView,DetailView
+from django.views.generic import ListView, CreateView, TemplateView,DetailView,DeleteView
 from .models import News, Student, Attendance,Attendance_log,schedule
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
@@ -104,6 +104,10 @@ class create(LoginRequiredMixin, CreateView):
         instance.user = self.request.user
         instance.save()
         return super().form_valid(form)
+class Deleteview(LoginRequiredMixin,DeleteView):
+    template_name='management/management_delete.html'
+    model=Student
+    success_url = reverse_lazy('student_list')
 
 class Face_recognition(LoginRequiredMixin, TemplateView):
     def get(self, request,):
