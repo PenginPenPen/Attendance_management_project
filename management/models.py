@@ -12,6 +12,10 @@ class Student(models.Model):
     name= models.CharField(max_length=30)
     student_ID_number = models.CharField(max_length=30)
 
+    in_Time = models.DateTimeField(blank=True, null=True, )
+    out_time= models.DateTimeField(blank=True, null=True)
+    status = models.CharField(max_length=100,choices=CATEGORY ,blank=True, null=True)
+
     def save(self, *args, **kwargs):
         if self.id is None:
             uploaded_file = self.image

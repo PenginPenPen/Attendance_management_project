@@ -104,6 +104,7 @@ class create(LoginRequiredMixin, CreateView):
         instance.user = self.request.user
         instance.save()
         return super().form_valid(form)
+
 class Deleteview(LoginRequiredMixin,DeleteView):
     template_name='management/management_delete.html'
     model=Student
